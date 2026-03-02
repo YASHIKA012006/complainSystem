@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Complaint Portal - Kanpur Institute of Technology</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+  <!-- Your local custom CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <i>🏛️</i> Student Complaint Portal
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="{{ url_for('status') }}">Student Status</a></li>
+                    <li><a href="{{ url_for('admin_login') }}">Admin Login</a></li>
+                    <li><a href="{{ url_for('about') }}">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Kanpur Institute of Technology</h1>
+                <h5>A1, UPSIDC Industrial Area, Chakeri ward, Rooma, Kanpur -208001 Uttar Pradesh</h5>
+                <p>Welcome to the Student Complaint Portal. This platform allows students to submit complaints and track their resolution status efficiently. Your feedback helps us improve the campus experience for everyone.</p>
+                <a href="#complaint-form" class="btn">Submit a Complaint</a>
+            </div>
+            <div class="hero-image">
+                <img src="{{ url_for('static', filename='login.jpg') }}" alt="KIT BUILDING" class="college-photo">
+            </div>
+        </div>
+    </section>
+
+    <!-- Complaint Form Section -->
+    <section class="form-section" id="complaint-form">
+        <div class="container">
+            <div class="form-container">
+                <h2>Submit Your Complaint</h2>
+                <form method="POST" action="/submit">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="roll">Roll Number</label>
+                            <input type="text" id="roll" name="roll" placeholder="Enter your roll number" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="branch">Branch</label>
+                            <input type="text" id="branch" name="branch" placeholder="Enter your branch" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="year">Year</label>
+                            <input type="text" id="year" name="year" placeholder="Enter your academic year" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="category">Complaint Category</label>
+                            <select id="category" name="category" required>
+                                <option value="">--Select Category--</option>
+                                <option value="Academic">Academic</option>
+                                <option value="Facility">Facility</option>
+                                <option value="Hostel">Hostel</option>
+                                <option value="Transport">Transport</option>
+                                <option value="Sports and Games">Sports and Games</option>
+                                <option value="Ragging">Ragging</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="description">Describe Your Complaint</label>
+                        <textarea id="description" name="description" placeholder="Please provide detailed information about your complaint..." rows="5" required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Submit Complaint</button>
+                </form>
+                <a href="/status" class="status-link">Check Complaint Status →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About KIT</h3>
+                    <p>Kanpur Institute of Technology is committed to providing quality education and a conducive learning environment for all students.</p>
+                    <p>Address: A1, UPSIDC Industrial Area, Chakeri ward, Rooma, Kanpur -208001 Uttar Pradesh</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="#home">Home</a></p>
+                    <p><a href="{{ url_for('status') }}">Student Status</a></p>
+                    <p><a href="{{ url_for('admin_login') }}">Admin Login</a></p>
+                    <p><a href="{{ url_for('about') }}">About Portal</a></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: yashika9569597936@gmail.com</p>
+                    <p>Phone: +91-956-9597936</p>
+                    
+                    <div class="social-links">
+                        <a href="https://www.facebook.com" title="Facebook">f</a>
+                        <a href="https://www.Twitter.com" title="Twitter">t</a>
+                        <a href="https://www.instagram.com" title="Instagram">i</a>
+                        <a href="https://www.linkedin.com" title="LinkedIn">in</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 QUARTILE CODER.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | College Complaint Portal</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+</head>
+<body>
+  <!-- STATS SECTION -->
+  <section class="stats" style="background: url('{{ url_for('static', filename='kit.jpg') }}') no-repeat center center/cover;">
+    <div class="container">
+      <div class="stats-content">
+        <div class="stat-box">
+          <i class="fas fa-users"></i>
+          <h2>100%</h2>
+          <p>Project Complete</p>
+        </div>
+        <div class="stat-box">
+          <i class="fas fa-check-circle"></i>
+          <h2>3+</h2>
+          <p>Module developed</p>
+        </div>
+        <div class="stat-box">
+          <i class="fas fa-trophy"></i>
+          <h2>Under Taking</h2>
+          <p>Status</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section class="about-section">
+    <div class="container">
+      <h2>About</h2>
+      <div class="about-content">
+        <p>
+          Welcome to the <strong>Student Complaint Registration System</strong> made by 
+          <strong> QUARTILE CODER</strong>. This platform is designed
+          to provide students with a seamless way to submit complaints regarding
+          academics, facilities, hostel, transport, sports, or any other
+          college-related issues.
+        </p>
+        
+        <div class="highlight">
+          <p>
+            Our mission is to ensure transparency, accountability, and faster
+            resolution of student grievances. Students can track the status of their
+            complaints in real-time, receive updates, and communicate directly with
+            the administration for better outcomes.
+          </p>
+        </div>
+        
+        <p>
+          <strong>QUARTILE CODER</strong> is committed to creating
+          a supportive and efficient learning environment. This system empowers
+          students to voice their concerns while enabling the administration to
+          address issues systematically, making the college experience smoother
+          and more productive.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION SECTION -->
+  <section class="mission">
+    <div class="container">
+      <div class="mission-content">
+        <h2>Our Mission</h2>
+        <p>
+          To provide a transparent, efficient, and user-friendly platform for grievance redressal,
+          ensuring every student's voice is heard and addressed promptly.
+        </p>
+        
+        <div class="mission-features">
+          <div class="feature">
+            <ul>
+              <li><i class="fas fa-shield-alt"></i> Transparency and Accountability</li>
+              <li><i class="fas fa-bolt"></i> Fast Resolution with Real-time Tracking</li>
+              <li><i class="fas fa-lock"></i> Secure and Confidential Communication</li>
+              <li><i class="fas fa-chart-line"></i> Modern Admin Analytics Dashboard</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER SECTION -->
+  <section class="newsletter">
+    <div class="container">
+      <h2>Stay Updated</h2>
+      <p>Subscribe to get updates about portal features and performance.</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <p>© 2025 College Complaint Portal | Made with ❤️ for Hackathon</p>
+        <div class="socials">
+          <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Animate stat boxes on scroll
+    const statBoxes = document.querySelectorAll('.stat-box');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = 1;
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.2 });
+    
+    statBoxes.forEach(box => {
+      box.style.opacity = 0;
+      box.style.transform = 'translateY(20px)';
+      box.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      observer.observe(box);
+    });
+  </script>
+</body>
+</html>
